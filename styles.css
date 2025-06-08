@@ -1,0 +1,141 @@
+/* FONTS */
+
+/* ANIAMTIONS */
+header ul a:hover {
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+header ul a {
+    transition: letter-spacing 100ms ease-in-out;
+}
+
+
+/* GEN */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    outline-width: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+input {
+    border: none;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+html {
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100dvh;
+    width: 100%;
+
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* SPECS */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    border: 2px solid red;
+
+}
+
+    .header-left {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+        .pfp {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+
+            background-color: bisque;
+
+        }
+
+        .logo {
+            font-size: 20px;
+        }
+
+    .header-right {
+
+    }
+
+        .header-right ul {
+            height: 100%;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .header-right li {
+            font-size: 18px;
+            height: 100%;
+        }
+
+            .header-right li a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+section {
+
+}
+
+    .HERO {
+
+    }
+
+.gap {
+    flex-grow: 1;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+
+    /* border-top: 2px solid gray; */
+}
+
+    .footer-left {
+
+    }
+
+    .footer-right {
+
+    }
