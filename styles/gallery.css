@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+    text-decoration: none;
+    list-style: none;
+    background-repeat: no-repeat;
+    outline-width: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+input {
+    border: none;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+html {
+    min-height: 100%;
+    width: 100%;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #070707;
+  background: #040405;
+
+  /* Use whichever works best for you */
+  min-block-size: 100vh;
+  /* min-block-size: 100dvh;
+  min-block-size: 100svh; */
+
+  display: grid;
+  grid-template-columns:
+    [sidebar-start]
+    10rem
+    [sidebar-end main-start]
+    1fr
+    [main-end];
+    
+}
+
+a {
+    color: #8d8dbc
+}
+
+ul {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+a:hover {
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+a {
+    transition: letter-spacing 100ms ease-in-out;
+}
+
+#current {
+    color: #7474f7;
+}
+
+.HERO {
+    padding-top: 15px;
+    padding-left: 15px;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.pfp {
+    margin-left: 40px;
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+
+    background-image: url(../img/pfp.jpg);
+    background-color: black;
+    background-size: contain;
+
+    }
+
+
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  margin-block-end: 1rem;
+}
+
+.sidebar {
+  grid-column: sidebar;
+  color: #8d8dbc;
+  background-color: #1d1d29;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.credit {
+  /* display: flex; */
+  padding-left: 15px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.credit a {
+    color: #7474f7;
+}
+
+.main {
+  grid-column: main;
+  padding: 1.25rem;
+}
+
+/* Photo Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  grid-auto-rows: 12.5rem;
+  grid-auto-flow: dense;
+  gap: 0.75rem;
+}
+
+.gallery figure {
+  /* container-type: inline-size; */
+  container: figure / inline-size;
+  overflow: hidden;
+
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  /* grid-template-rows: 1fr; */
+
+  /*
+    Because 1fr = minmax(auto, 1fr),
+    to prevent the grid blowout,
+    set the minimum to zero.
+  */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.gallery img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+
+  /* grid-row: 1 / -1; */
+  /* grid-column: 1 / -1; */
+  grid-area: 1 / 1 / -1 / -1;
+
+  transition: scale 1s ease-in-out;
+}
+
+.gallery figure:hover img {
+  scale: 1.125;
+}
+
+.gallery figcaption {
+  grid-area: 1 / 1 / -1 / -1;
+  align-self: end;
+  z-index: 1;
+
+  padding: 3em 15% 1em 1em;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  background: linear-gradient(transparent 25%, rgb(0 0 0 / 0.75));
+  display: none;
+}
+
+@container figure (width > 20rem) {
+  .gallery figcaption {
+    display: block;
+  }
+}
+
+.gallery figcaption h3 {
+  font-size: 1.0625rem;
+}
+
+.gallery figcaption p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (width > 600px) {
+  .gallery figure:nth-child(1) {
+    grid-area: span 2 / span 2;
+  }
+
+  .gallery figure:nth-child(4n + 1) {
+    grid-row: span 2;
+  }
+
+  .gallery figure:nth-child(4n + 2) {
+    grid-column: span 2;
+  }
+}
+
